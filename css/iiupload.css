@@ -1,0 +1,694 @@
+/* ------------------ general --------------- */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+.clearall {
+  clear: both;
+}
+.mod_iiupload_form * {
+  box-sizing: border-box;
+}
+/* -------------- MESSAGE SYSTEM ----------------*/
+#mod_iiupload_message_container{
+  box-sizing: border-box;
+}
+#mod_iiupload_message_container div{
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: 2px 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  position: relative;
+  font-size: 1.1em;
+}
+#mod_iiupload_message_container div i{
+  font-weight: bolder;
+  font-style: normal;
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* IE/Edge */
+    user-select: none;
+}
+#mod_iiupload_message_container div i:hover{
+  color:#444;
+}
+div.mod_iiupload_message_warning {
+  color: red;
+  border-color: red;
+  background-color: #ffeeee;
+}
+div.mod_iiupload_message_info {
+  color: #00ABFF;
+  border-color: #00ABFF;
+  background-color: #e5f6ff;
+}
+div.mod_iiupload_message_success {
+  color: #3CC73E;
+  border-color: #3CC73E;
+  background-color: #ebf9eb;
+}
+/* ----------------- Start Upload Function Button ----------------- */
+.mod_iiupload_cubtn_style{
+  cursor: pointer;
+  display: block;
+  background-color: #333;
+  color: white;
+  padding: 2px 20px;
+  line-height: 22px;
+  outline: none;
+  width: 250px;
+  height: 30px;
+  border: 2px solid #555;
+  text-align: center;
+  font-weight: bold;
+}    
+.mod_iiupload_cubtn_style:hover,
+.mod_iiupload_cubtn_style:active,
+.mod_iiupload_cubtn_style:focus {
+  border: 2px solid #EE8823;
+  background-color: #666;
+}
+/* ------------------ Overly modal -------------------- */
+.mod_iiupload_modal .mod_iiupload_click_overlay{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,1);
+  opacity: 0;
+}
+.mod_iiupload_modal {
+  position: fixed;
+  z-index: 9;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+.mod_iiupload_modal_content {
+  position: relative;
+  background-color: #fff;
+  margin: auto;
+  border: 1px solid #666;
+  width: 80%;
+  max-width: 768px;
+  padding: 0;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: topfade;
+  -webkit-animation-duration: 0.4s;
+  animation-name: topfade;
+  animation-duration: 0.4s
+}
+@-webkit-keyframes topfade {
+  0% {top:-400px; opacity:0} 
+  100% {top:0; opacity:1}
+}
+@keyframes topfade {
+  0% {top:-400px; opacity:0}
+  100% {top:0; opacity:1}
+}
+.mod_iiupload_modal_header .mod_iiupload_modal_close {
+  color: white;
+  float: right;
+  font-weight: bold;
+  cursor: pointer;
+}
+.mod_iiupload_modal_header .mod_iiupload_modal_close:hover,
+.mod_iiupload_modal_header .mod_iiupload_modal_close:active,
+.mod_iiupload_modal_header .mod_iiupload_modal_close:focus {
+  color: #EE8823;
+}
+.mod_iiupload_overlay_close:hover,
+.mod_iiupload_overlay_close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.mod_iiupload_modal_header {
+  padding: 5px 10px;
+  background-color: #333;
+  color: white;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.mod_iiupload_modal_footer {
+  padding: 2px 4px;
+  background-color: #333;
+  color: white;
+  min-height: 30px;
+}
+/* ---------------- Pathline ---------------- */
+.mod_iiupload_pathline * {
+  box-sizing: border-box;
+}
+.mod_iiupload_pathline {
+  padding: 8px 10px;
+  position: relative;
+}
+.mod_iiupload_pathline .headline {
+  display:inline-block;
+  width: 150px;
+  padding: 0 10px;
+  color: black;
+  font-size: 1.1em;
+  font-weight: bold;
+  vertical-align: middle;
+  height: 28px;
+  line-height: 28px;
+}
+.mod_iiupload_pathline .inputline {
+  display:inline-block;
+  width: calc(100% - 150px);
+  background-color: #ededed;
+  color: black;
+  font-size: 1.1em;
+  font-weight: bold;
+  position: relative;
+  vertical-align: middle;
+  height: 28px;
+  line-height: 28px;
+}
+.mod_iiupload_pathline .inputline span{
+  display:inline-block;
+  border-right: 2px solid #949494;
+  width: 70px;
+  padding: 0 10px;
+  line-height: 20px;
+}
+.mod_iiupload_pathline .inputline input{
+  display:inline-block;
+  padding: 0 5px;
+  width: calc(100% - 72px); 
+  height: 28px;
+  margin: 0 0 0 2px;
+  border: 0;
+  top: 0;
+  outline: none;
+  vertical-align: top;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+.mod_iiupload_pathline .inputline input:hover,
+.mod_iiupload_pathline .inputline input:focus,
+.mod_iiupload_pathline .inputline input:active{
+  border:1px solid #EE8823;
+}
+/* ---------------- Drag&Drop line ---------------- */
+.mod_iiupload_dragdropline * {
+  box-sizing: border-box;
+}
+.mod_iiupload_dragdropline {
+  padding: 8px 10px;
+  position: relative;
+}
+.mod_iiupload_dragdropline .dragdrop_wrapper{
+  display:inline-block;
+  width: 78%;
+  padding: 8px;
+  vertical-align: middle;
+  height: 330px;
+  background: #ededed;
+  overflow-y: scroll;
+}
+.mod_iiupload_dragdropline .button_wrapper{
+  width: 22%;
+  padding: 0 0 0 4px;
+  vertical-align: top;
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+}
+/* -------- SCROLLBAR --------*/
+.mod_iiupload_dragdropline .dragdrop_wrapper::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+  border-radius: 10px;
+  background-color: #949494;
+}
+
+.mod_iiupload_dragdropline .dragdrop_wrapper::-webkit-scrollbar {
+  width: 12px;
+  background-color: #ededed;
+}
+
+.mod_iiupload_dragdropline .dragdrop_wrapper::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  background-color: #EE8823;
+}
+/* ------------ upload button ------------- */
+.mod_iiupload_dragdropline .button_wrapper button {
+  bottom: 0;
+  cursor: pointer;
+  display: block;
+  background-color: #333;
+  margin: 10px auto 0;
+  font-weight: bold;
+  color: white;
+  padding: 2px 0;
+  line-height: 15px;
+  position: relative;
+  outline: none;
+  width: 95%;
+  height: 26px;
+  border: 1px solid #555;
+  float: none;
+}
+.mod_iiupload_dragdropline .button_wrapper button:hover,
+.mod_iiupload_dragdropline .button_wrapper button:active,
+.mod_iiupload_dragdropline .button_wrapper button:focus {
+  border: 2px solid #EE8823;
+  background-color: #666;
+}
+/* --------- small screens ---------*/
+@media screen and (max-width: 640px) {
+  .mod_iiupload_pathline .inputline {
+    display: block;
+    width: 100%;
+  }
+  .mod_iiupload_dragdropline .button_wrapper{
+    display:block;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+  }
+  .mod_iiupload_dragdropline .button_wrapper button {
+    display: inline-block;
+    width: 50%;
+  }
+  .mod_iiupload_dragdropline .dragdrop_wrapper {
+    display: block;
+    width: 100%;
+  }
+}
+/* ------------------- Drag&Drop Area ------------------- */
+.mod_iiupload_dragdropline .dragdrop_area{
+  height: 55%;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  padding: 6px;
+  width: 100%;
+  background-color: #fff;
+  outline: 1px solid black;
+  outline-offset: -5px;
+  transition: all 0.3s;
+}
+.has-advanced-upload .mod_iiupload_dragdropline .dragdrop_area {
+  outline: 2px dashed black;
+  outline-offset: -10px;
+}
+.is-dragover .mod_iiupload_dragdropline .dragdrop_area{
+  background-color: #888;
+  outline: 2px dashed #EE8823;
+  outline-offset: -7px;
+}
+.mod_iiupload_dragdropline .dragdrop_area  > span {
+  display: none;
+  transition: all 0.3s;
+}
+.has-advanced-upload .mod_iiupload_dragdropline .dragdrop_area > span {
+  display: block;
+  font-size: 1.1em;
+}
+.is-dragover .mod_iiupload_dragdropline .dragdrop_area  > span {
+  color: white;
+}
+.mod_iiupload_dragdropline .dragdrop_area > input {
+  display: none;
+  margin: 0 auto 10px;
+  left: 0;
+  right: 0;
+}
+.mod_iiupload_dragdropline .dragdrop_area > label {
+  display: block;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  color: #EE8823;
+  padding: 5px;
+  font-size: 1.3em;
+}
+.has-advanced-upload .mod_iiupload_dragdropline .dragdrop_area > label {
+  display: block;
+  font-size: 1.1em;
+}
+.mod_iiupload_dragdropline .dragdrop_area > .symbol {
+  display: block;
+  font-size: 5em;
+  line-height: 1em;
+  margin-top: 20px;
+  transition: all 0.3s;
+}
+.is-dragover .mod_iiupload_dragdropline .dragdrop_area  > .symbol {
+  color: white;
+}
+/* ------------------- Preview Area ------------------- */
+.mod_iiupload_dragdropline .preview_area{
+  min-height: 45%;
+  text-align: left;
+  position: relative;
+  padding: 5px;
+  width: 100%;
+  transition: all 0.3s;
+}
+.mod_iiupload_dragdropline .preview_area .preview_element {
+  float:left;
+  width: calc(33% - 7px);
+  min-width: 150px;
+  height: 120px;
+  margin: 0 8px 8px 0;
+  display: block;
+  border-radius: 5px;
+  border:1px solid black;
+  position: relative;
+  background-color: white;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 3px;
+  text-align: center;
+  vertical-align: top;
+  -webkit-animation-name: iiupload_preview_fade;
+  -webkit-animation-duration: 1.3s;
+  animation-name: iiupload_preview_fade;
+  animation-duration: 1.3s;
+  -webkit-transition: width 0.3s, opacity 0.3s;
+  transition: width 0.3s, opacity 0.3s;
+}
+@-webkit-keyframes iiupload_preview_fade {
+  0% {opacity:0} 
+  100% {opacity:1}
+}
+@keyframes iiupload_preview_fade {
+  0% {opacity:0}
+  100% {opacity:1}
+}
+
+.preview_element_remove{
+  opacity: 0;
+  width: 0;
+}
+.mod_iiupload_dragdropline .preview_area .preview_element.is_uploading {
+  background: linear-gradient(89deg, #c1ff00, #ffffff);
+  background-size: 400% 400%;
+  -webkit-animation: iiupload_preview_uploading 2s ease infinite;
+  -moz-animation: iiupload_preview_uploading 2s ease infinite;
+  -o-animation: iiupload_preview_uploading 2s ease infinite;
+  animation: iiupload_preview_uploading 2s ease infinite;
+}
+@-webkit-keyframes iiupload_preview_uploading {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@-moz-keyframes iiupload_preview_uploading {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@-o-keyframes iiupload_preview_uploading {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@keyframes iiupload_preview_uploading { 
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+.mod_iiupload_dragdropline .preview_area .preview_element.is_ok {
+  background-color: #149714;
+  transition: background-color 0.3s;
+}
+.mod_iiupload_dragdropline .preview_area .preview_element.is_error {
+  background-color: #971414;
+  transition: background-color 0.3s;
+}
+.mod_iiupload_dragdropline .preview_area img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #fff;
+}
+.mod_iiupload_dragdropline .preview_area .preview_element > div {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid black;
+  position: absolute;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 36px;
+  font-size: 2em;
+  font-weight: bold;
+  top: -15px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s, color 0.3s;
+  background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+.mod_iiupload_dragdropline .preview_area .preview_element > div:hover {
+  cursor: pointer;
+  border: 2px solid black;
+  background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 42%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 42%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 42%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.mod_iiupload_dragdropline .preview_area .preview_element > div.modify {
+  left: -10px;
+}
+.mod_iiupload_dragdropline .preview_area .preview_element > div.modify::after {
+  content:'';
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg version='1' xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 793.701 793.701'%3E%3Cpath d='M571 144.5l78.2 78.3-347.8 347.8-78.3-78.3 348-347.8m0-45.3l-393.2 393L301.4 616l393-393.2L571 99.2z'/%3E%3Cpath d='M312.6 604.6L301.4 616 99.2 694.4l78.6-202.2L189 481'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.mod_iiupload_dragdropline .preview_area .preview_element div.crop_rotate {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mod_iiupload_dragdropline .preview_area .preview_element div.crop_rotate::after {
+  content:'';
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg version='1' xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 793.701 793.701'%3E%3Cpath fill='%23EE8823' d='M283.5 283.5h226.8v226.8H283.5z'/%3E%3Cpath fill='none' stroke='%23000' stroke-width='32' stroke-miterlimit='10' d='M680.3 283.5H283.5v396.8'/%3E%3Cpath fill='none' stroke='%23000' stroke-width='32' stroke-miterlimit='10' d='M510.2 113.4v396.8H113.4m567-113.2c0 124.7-80.8 230.7-193 268.5'/%3E%3Cpath d='M493.5 597L397 680.3l120.3 42'/%3E%3Cpath fill='none' stroke='%23000' stroke-width='32' stroke-miterlimit='10' d='M113.4 397c0-125 80.7-231 192.8-268.8'/%3E%3Cpath d='M300.2 196.7l96.7-83.3-120.8-42'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.mod_iiupload_dragdropline .preview_area .preview_element div.remove {
+  right: -10px;
+  color: #971414;
+}
+.mod_iiupload_dragdropline .preview_area .preview_element div.remove:hover {
+  line-height: 34px;
+  color: red;
+}
+.mod_iiupload_dragdropline .preview_area .preview_element:hover > div {
+  display: block;
+  opacity: 1;
+  -webkit-animation-name: iiupload_preview_fade;
+  -webkit-animation-duration: 0.3s;
+  animation-name: iiupload_preview_fade;
+  animation-duration: 0.3s;
+}
+.mod_iiupload_dragdropline .preview_area .preview_element span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 0;
+  border-radius: 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transition: all 0.3s;
+  left: 0;
+  background-color: #000; /* fallback */
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+  text-shadow: 0px 0px 5px #440000;
+  display: none;
+  padding-top: 32px;
+  overflow: hidden;
+}
+.mod_iiupload_dragdropline .preview_area .preview_element span.name {
+  border-radius: 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  top: 50%;
+  padding-top: 10px;
+}
+.mod_iiupload_dragdropline .preview_area .preview_element.is_error span.size {
+  color: red;
+}
+.mod_iiupload_dragdropline .preview_area .preview_element:hover span {
+  display: block;
+  opacity: 1;
+}
+/* ------------------------------- Preview Image Indicators -------------------------------- */
+.mod_iiupload_dragdropline .preview_area .preview_element .indicators {
+  display: block;
+  position: absolute;
+  height: 20px;
+  width: 100%;
+  bottom: 5px;
+  text-align: right;
+}
+.mod_iiupload_dragdropline .preview_area .preview_element .indicators div {
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  display: none;
+  margin: 0 8px 0 0;
+  -webkit-animation-name: iiupload_preview_fade;
+  -webkit-animation-duration: 0.3s;
+  animation-name: iiupload_preview_fade;
+  animation-duration: 0.3s;
+}
+.mod_iiupload_dragdropline .preview_area .preview_element .indicators .cropped{
+  background-color: #EE8823;
+}
+.mod_iiupload_dragdropline .preview_area .preview_element .indicators .errors{
+  background-color: red;
+}
+.mod_iiupload_dragdropline .preview_area .preview_element.is_error .indicators .errors{
+  display: inline-block;
+}
+/* ------------------------------- Uploading Image -------------------------------- */
+.mod_iiupload_uploading {
+  display: none;
+}
+.mod_iiupload_uploading img {
+  height: 26px;
+}
+.is-uploading .mod_iiupload_uploading {
+  display: block;
+  -webkit-animation-name: iiupload_preview_fade;
+  -webkit-animation-duration: 0.3s;
+  animation-name: iiupload_preview_fade;
+  animation-duration: 0.3s;
+}
+.mod_iiupload_uploading div{
+    height: 24px;
+    min-width: 45px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    text-align: left;
+    line-height: 24px;
+}
+/* --------------------------- image cropping ---------------------------- */
+.mod_iiupload_crop_wrapper {
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  left: -1px;
+  right: -1px;
+  background-color: white;
+  z-index: 10;
+  min-height: calc(100% - 30px);
+  border: 1px solid #666;
+  display: none;
+}
+.mod_iiupload_crop_wrapper.wrapper_open{
+  display: block;
+}
+.mod_iiupload_crop_wrapper .crop_box {
+  width: 100%;
+  height: calc(100% - 30px);
+}
+.mod_iiupload_crop_wrapper.wrapper_open img{
+  max-width: 100%;
+}
+/* --------------------------- image cropping navigation ---------------------------- */
+.mod_iiupload_crop_wrapper .crop_buttons {
+  width: 100%;
+  min-height: 30px;
+  display: inline-block;
+  padding: 0 4px;
+  background-color: #333;
+  text-align: center;
+}
+.mod_iiupload_crop_wrapper .crop_buttons div {
+  display: inline-block;
+  cursor: pointer;
+  background-color: #333;
+  margin: 0 1px 0 0;
+  font-weight: bold;
+  color: white;
+  padding: 2px 6px;
+  line-height: 22px;
+  position: relative;
+  outline: none;
+  height: 30px;
+  border: 1px solid #555;
+  float: none;
+  vertical-align: middle;
+  text-align: center;
+}
+.mod_iiupload_crop_wrapper .crop_buttons div.reset_crop {
+  margin: 0 8px 0 7px;
+}
+.mod_iiupload_crop_wrapper .crop_buttons div.rotate_ccw {
+  background-image: url("data:image/svg+xml,%3Csvg version='1' xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 793.701 793.701'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='48' stroke-miterlimit='10' d='M196.41 196.41c110.7-110.7 290.18-110.7 400.88 0s110.7 290.18 0 400.88c-110.7 110.7-290.18 110.7-400.88 0'/%3E%3Cpath fill='%23fff' d='M254.746 228.336l-123.284 33.022 33.022-123.284'/%3E%3C/svg%3E");
+}
+.mod_iiupload_crop_wrapper .crop_buttons div.rotate_cw {
+  background-image: url("data:image/svg+xml,%3Csvg version='1' xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 793.701 793.701'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='48' stroke-miterlimit='10' d='M597.3 196.4c-110.7-110.7-290.2-110.7-401 0s-110.6 290.2 0 401c110.8 110.6 290.3 110.6 401 0'/%3E%3Cpath fill='%23fff' d='M629.2 138l33 123.4-123.2-33'/%3E%3C/svg%3E");
+}
+
+.mod_iiupload_crop_wrapper .crop_buttons div.rotate_ccw,
+.mod_iiupload_crop_wrapper .crop_buttons div.rotate_cw {
+  padding: 2px 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.mod_iiupload_crop_wrapper .crop_buttons div:hover,
+.mod_iiupload_crop_wrapper .crop_buttons div:active,
+.mod_iiupload_crop_wrapper .crop_buttons div:focus {
+  border: 2px solid #EE8823;
+  background-color: #666;
+  line-height: 21px;
+  padding: 2px 5px;
+}
+.mod_iiupload_crop_wrapper .crop_buttons div.rotate_ccw:hover,
+.mod_iiupload_crop_wrapper .crop_buttons div.rotate_cw:hover,
+.mod_iiupload_crop_wrapper .crop_buttons div.rotate_ccw:active,
+.mod_iiupload_crop_wrapper .crop_buttons div.rotate_cw:active,
+.mod_iiupload_crop_wrapper .crop_buttons div.rotate_ccw:focus,
+.mod_iiupload_crop_wrapper .crop_buttons div.rotate_cw:focus {
+  padding: 2px 15px;
+}
