@@ -13,6 +13,7 @@ Aktiviertes Javascript wird vorrausgesetzt.
 Getestet in WB 2.8.3 SP7
 
 Eine Beispiel befindet sich in den Admintools.
+```
 
 ###Was geht schon?
 * Bilder Upload in /media und Unterordnern davon
@@ -35,8 +36,9 @@ Eine Beispiel befindet sich in den Admintools.
 * Das Modul ist zwar darauf ausgelegt, einfach weitere Sprachen zu unterstützen (Sprachdateien für php und JS), allerdings ist momentan nur eine deutsches Version hinterlegt
 alle anderen Bildformate
 
+![Preview Image 1](https://raw.githubusercontent.com/Cherrg/iiUpload/master/images/iipuload_preview1.jpg "Preview Image 1")
+![Preview Image 2](https://raw.githubusercontent.com/Cherrg/iiUpload/master/images/iipuload_preview2.jpg "Preview Image 2")
 
-```
 ---
 ###Einbinden in andere WB Module im Backend
 
@@ -124,7 +126,7 @@ Die Operationen müssen vor dem Funktionsaufruf von '**showBotton**' erfolgen.
 
 > $value = *true*|*false*
 
-```
+```php
 	$ii->createThumbs(bool $value);
 ```
 ---
@@ -134,7 +136,7 @@ Die Operationen müssen vor dem Funktionsaufruf von '**showBotton**' erfolgen.
 
 > $key = '*base64*|*crop*|*svg*|*gif*|*jpeg*|*png*|*override*'
 
-```
+```php
 	$ii->allow(string $key, bool $value);
 ```
 
@@ -143,7 +145,7 @@ Die Operationen müssen vor dem Funktionsaufruf von '**showBotton**' erfolgen.
 
 > $value = Ländercode (2 Großbuchstaben) / two letter country code (Uppercase)
 
-```
+```php
 	$ii->setLanguage(string $value);
 ```
 
@@ -152,7 +154,7 @@ Die Operationen müssen vor dem Funktionsaufruf von '**showBotton**' erfolgen.
 
 > $value =  allowed chars: 'A-Za-z0-9_'
 
-```
+```php
 	$ii->setUploadJsCallback(string $value);
 ```
 
@@ -170,7 +172,7 @@ Die Funktion wird mit Abschluss eines jeden Uploads aufgerufen.
 
 > $value = string
 
-```
+```php
 	$ii->setUploadFolder(string $value);
 ```
 
@@ -179,7 +181,7 @@ Die Funktion wird mit Abschluss eines jeden Uploads aufgerufen.
 
 > $value = *true*|*false*
 
-```
+```php
 	$ii->setUploadFolder(bool $value);
 ```
 ---
@@ -187,7 +189,7 @@ Die Funktion wird mit Abschluss eines jeden Uploads aufgerufen.
 
 > $value string
 
-```
+```php
 	$ii->setButtonText(string $value);
 ```
 ---
@@ -199,7 +201,7 @@ Die Funktion wird mit Abschluss eines jeden Uploads aufgerufen.
 <div class="myVeryOwnButton [CLASS]" id="[ID]">[BUTTONLABEL]</div>
 ```
 
-```
+```php
 	$ii->setButtonText(bool $value);
 ```
 Das Element muss mindestens [ID] mit beinhalten.
@@ -209,7 +211,7 @@ Das Element muss mindestens [ID] mit beinhalten.
 
 > $path_to_file string
 
-```
+```php
 	$ii->setCss(string $path_to_file);
 ```
 
