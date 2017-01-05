@@ -4,16 +4,19 @@
 
 **Info:** 
 ```
-Das Modul befindet sich in einem Alphastadium. Für eventuelle Schäden an laufenden Systemen wird keine Haftung übernommen, allerdings sind mir bis jetzt keine aufgefallen.
+Das Modul befindet sich in einem Alphastadium. 
+Für eventuelle Schäden an laufenden Systemen wird keine Haftung übernommen, 
+allerdings sind mir bis jetzt keine aufgefallen.
 Testet es am besten auf einer Testinstallation.
-Auch ist nicht garantiert, dass zwischen einzelnen Versionen ein Modulupdate funktioniert. Von daher sollte vorerst statt eines Updates eine Neuinstallation des Modules stattfinden.
+Auch ist nicht garantiert, dass zwischen einzelnen Versionen ein Modulupdate funktioniert. 
+Von daher sollte vorerst statt eines Updates eine Neuinstallation des Modules stattfinden.
 
 Aktiviertes Javascript wird vorrausgesetzt.
-
 Getestet in WB 2.8.3 SP7
-
 Eine Beispiel befindet sich in den Admintools.
 ```
+[Link zum WBCE Forum](https://forum.wbce.org/viewtopic.php?pid=7934)
+
 
 ###Was geht schon?
 * Bilder Upload in /media und Unterordnern davon
@@ -34,7 +37,7 @@ Eine Beispiel befindet sich in den Admintools.
 	* --> Warnung wird angezeigt
 * Support älterer Browser (IE...)
 * Das Modul ist zwar darauf ausgelegt, einfach weitere Sprachen zu unterstützen (Sprachdateien für php und JS), allerdings ist momentan nur eine deutsches Version hinterlegt
-alle anderen Bildformate
+* alle anderen Bildformate
 
 ![Preview Image 1](https://raw.githubusercontent.com/Cherrg/iiUpload/master/images/iipuload_preview1.jpg "Preview Image 1")
 ![Preview Image 2](https://raw.githubusercontent.com/Cherrg/iiUpload/master/images/iipuload_preview2.jpg "Preview Image 2")
@@ -182,7 +185,7 @@ Die Funktion wird mit Abschluss eines jeden Uploads aufgerufen.
 > $value = *true*|*false*
 
 ```php
-	$ii->setUploadFolder(bool $value);
+	$ii->hideUploadFolder(bool $value);
 ```
 ---
 > Upload  Button Text
@@ -202,7 +205,7 @@ Die Funktion wird mit Abschluss eines jeden Uploads aufgerufen.
 ```
 
 ```php
-	$ii->setButtonText(bool $value);
+	$ii->setButtonHtml(bool $value);
 ```
 Das Element muss mindestens [ID] mit beinhalten.
 
