@@ -64,7 +64,7 @@ $mod_iiupload_allow_png 			= 1;
 $mod_iiupload_allow_gif 			= 1;
 $mod_iiupload_allow_svg 			= 1;
 
-$mod_iiupload_allow_base64 			= 1;
+$mod_iiupload_allow_base64 			= 0;
 $mod_iiupload_allow_crop 			= 1;
 $mod_iiupload_allow_override 		= 0;
 

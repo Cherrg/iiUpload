@@ -43,7 +43,7 @@
  */
 
 $module_directory = 'ii_upload';
-$module_name = 'Intertopia Image Upload';
+$module_name = 'IImage Upload';
 $module_function = 'tool';
 $module_version = '0.0.12Alpha';
 $module_platform = '2.8.x';

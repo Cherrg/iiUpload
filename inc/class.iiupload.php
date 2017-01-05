@@ -399,8 +399,7 @@ class iiUpload {
 
     /**
      * set Setting: 'jsCallback'
-	 * callback function name for upload javascript (single file upload only)
-	 * get json result object. (calleronj, obj)
+	 * get json result object. (callerobj, obj)
 	 * obj ==> Object properties: (OK): success, imgpath, thumbpath, msg (FAILED): success, msg
      *
      * @access public
@@ -450,7 +449,8 @@ class iiUpload {
     }
     
     /**
-     * set Setting: 'optional Button Text'
+     * set Setting: 'optional Button HTML'
+     * e.g.: '<div class="myVeryOwnButton [CLASS]" id="[ID]">[BUTTONLABEL]</div>'
      *
      * @access public
      * @param string $value upload button text - allowed chars: 'A-Za-z0-9_\-#+*~%&?(): '
