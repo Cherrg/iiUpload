@@ -43,7 +43,7 @@
  */
 
 $module_directory = 'ii_upload_admin';
-$module_name = 'IImage Upload Admin';
+$module_name = 'IIUpload Admin';
 $module_function = 'tool';
 $module_version = '0.0.1';
 $module_platform = '2.8.x';
