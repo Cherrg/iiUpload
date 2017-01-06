@@ -97,21 +97,21 @@ if (!$mod_inst_error){
 }
 /* ----- copy files ------ */
 if ($copy_files){
-	if(! copy ( WB_PATH.'/modules/'.$module_directory.'/install/index.php' ,
+	if(! copy ( WB_PATH.'/modules/'.$module_directory.'/install/index_php_inst' ,
 				 $ad_mod_path.'/index.php' ) ) {
 		$admin->print_error('Fehler beim Kopieren der Dateien', 'javascript:history_back();');
 		$copy_files = false;
 	}
 }
 if ($copy_files){
-	if(! copy ( WB_PATH.'/modules/'.$module_directory.'/install/tool.php' ,
+	if(! copy ( WB_PATH.'/modules/'.$module_directory.'/install/tool_php_inst' ,
 				 $ad_mod_path.'/tool.php' ) ) {
 		$admin->print_error('Fehler beim Kopieren der Dateien', 'javascript:history_back();');
 		$copy_files = false;
 	}
 }
 if ($copy_files){
-	if(! copy ( WB_PATH.'/modules/'.$module_directory.'/install/info.php' ,
+	if(! copy ( WB_PATH.'/modules/'.$module_directory.'/install/info_php_inst' ,
 				 $ad_mod_path.'/info.php' ) ) {
 		$admin->print_error('Fehler beim Kopieren der Dateien', 'javascript:history_back();');
 		$copy_files = false;
