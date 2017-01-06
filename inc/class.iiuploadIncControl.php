@@ -80,7 +80,7 @@ class iiUploadIncControl {
 	 * Private constructor so nobody else can instance it
 	 */
 	protected function __construct() {
-		$includedFiles = array();
+		$this->includedFiles = array();
 	}
 	
 	/**

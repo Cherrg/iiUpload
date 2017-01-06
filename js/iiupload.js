@@ -368,6 +368,7 @@ if(!jQuery().iiUploader) {
 							}
 							if (allowRename){
 								fileList[file.name].processed = false;
+								if ($('#'+fileList[file.name].id).hasClass('is_error')) $('#'+fileList[file.name].id).removeClass('is_error');
 								fileList[file.name].rename = newName;
 								$('#'+fileList[file.name].id).find('.name').html(newName);
 							}
@@ -713,7 +714,7 @@ if(!jQuery().iiUploader) {
 					adata = data;
 					fileList[cFileName].processed=true;
 					if (adata.success == true){
-						if (!$elem_prev.hasClass('is_error')) $elem_prev.removeClass('is_error');
+						if ($elem_prev.hasClass('is_error')) $elem_prev.removeClass('is_error');
 						if (!$elem_prev.hasClass('is_ok')) $elem_prev.addClass('is_ok');
 					} else {
 						if (!$elem_prev.hasClass('is_error')) {
