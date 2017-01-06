@@ -251,8 +251,8 @@ class iiUpload {
         $this->module_name = "ii_upload";
         $this->module_path = WB_PATH .'/modules/'.$this->module_name;
         $this->module_webpath = WB_URL .'/modules/'.$this->module_name;
-        $this->media_path = WB_PATH .'/media/';
-        $this->media_webpath = WB_URL .'/media/';
+        $this->media_path = WB_PATH . MEDIA_DIRECTORY . '/';
+        $this->media_webpath = WB_URL . MEDIA_DIRECTORY . '/';
         $this->webpath = WB_URL;
         $this->defaultLanguage = (defined('WB_URL'))? LANGUAGE : 'DE';
         $this->choosenLanguage = $this->defaultLanguage;
