@@ -9,7 +9,7 @@ var ii_upload_i18n = { de: {
 	btn_rotate_anticlochwise: '90° gegen den Uhrzeigersinn drehen',
 	upload_start: 'Starten',
 	select_file: 'Datei auswählen' ,
-	drop_files_here: 'oder Dateien hier ablegen (Drag&Drop)',
+	drop_files_here: 'oder hier ablegen (Drag&Drop)',
 	file_alredy_added: "Bild '[FILENAME]' befindet sich bereits in der Liste.",
 	unknown_file_type: 'Unbekanntes Dateiformat',
 	wrong_file_type: 'Das Format der Datei wird nicht unterstützt.',
