@@ -45,7 +45,7 @@
 $module_directory = 'ii_upload';
 $module_name = 'IImage Upload';
 $module_function = 'tool';
-$module_version = '0.0.14alpha';
+$module_version = '0.0.15alpha';
 $module_platform = '2.8.x';
 $module_author = 'Michael Gnehr';
 $module_license = 'Copyright (C) 2016, Michael Gnehr - All rights reserved, GNU GPLv3';

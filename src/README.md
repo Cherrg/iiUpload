@@ -12,8 +12,10 @@ Auch ist nicht garantiert, dass zwischen einzelnen Versionen ein Modulupdate fun
 Von daher sollte vorerst statt eines Updates eine Neuinstallation des Modules stattfinden.
 
 Aktiviertes Javascript wird vorrausgesetzt.
-Getestet in WB 2.8.3 SP7
-Eine Beispiel befindet sich in den Admintools.
+Getestet in WB 2.8.3 SP7 (PHP5.6/PHP7)
+Getestet in WBCE 1.1.10 (PHP7)
+Getestet in WBCE 1.2alpha (PHP7)
+Eine Beispielverwendung befindet sich in den Admintools.
 ```
 [Link zum WBCE Forum](https://forum.wbce.org/viewtopic.php?pid=7934)
 
