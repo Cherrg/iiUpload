@@ -51,7 +51,6 @@ $mod_dir = basename(__DIR__);			// module name
 $showSettingsPermission = false;		// show settings on admin				// answer incoming Json Request
 $json_result = array();
 $skip = false;
-$printed_admin_header = false;
 
 $js_back = ADMIN_URL.'/admintools/tool.php';
 $toolUrl = ADMIN_URL.'/admintools/tool.php?tool=ii_upload';
@@ -63,12 +62,14 @@ include(WB_PATH .'/modules/'.$mod_dir.'/init.php');
 //show and accept admin settings?
 $showSettingsPermission = (is_dir(WB_PATH.'/modules/ii_upload_admin') && $admin->get_permission('ii_upload_admin','module' ))? true : false;
 
+//print admin header if not done already
+if(isset($admin_header) && !$admin_header) { $admin->print_header(); $admin_header = true;}
+
 // ------------- answer request or show settings -------------
 if($showSettingsPermission && isset($_POST['action'])&&$_POST['action']==='save'&& isset($_POST['mfunction']) && $_POST['mfunction']==='save_settings')  {
 // ------ save_settings ------
 	if (!$admin->checkFTAN())
 	{
-		if(!$admin_header && !$printed_admin_header) { $admin->print_header(); $printed_admin_header = true;}
 		$admin->print_error($MESSAGE['GENERIC_SECURITY_ACCESS'],$_SERVER['REQUEST_URI']);
 		$skip = true;
 	} else {
@@ -90,10 +91,8 @@ if($showSettingsPermission && isset($_POST['action'])&&$_POST['action']==='save'
 						 " WHERE `id` = '1'";
 		$database->query($mod_update_sql);
 		if ($database->is_error()){
-			if(!$admin_header && !$printed_admin_header) { $admin->print_header(); $printed_admin_header = true;}
 			$admin->print_error($database->get_error(),$_SERVER['REQUEST_URI']);
 		} else {
-			if(!$admin_header && !$printed_admin_header) { $admin->print_header(); $printed_admin_header = true;}
 			$admin->print_success($MESSAGE['PAGES']['SAVED'],$_SERVER['REQUEST_URI'] );
 		}
     	$skip = true;
@@ -105,7 +104,6 @@ if($showSettingsPermission&&!$skip){
 	$table = TABLE_PREFIX .$module_directory.'_settings';
 	$sql_result = $database->query("SELECT * FROM $table WHERE id = '1'");
 	if ($database->is_error()){
-		if(!$admin_header && !$printed_admin_header) { $admin->print_header(); $printed_admin_header = true;}
 		$admin->print_error($database->get_error(),$_SERVER['REQUEST_URI']);
 		$skip = true;
 	} else {
@@ -116,8 +114,6 @@ if($showSettingsPermission&&!$skip){
 		$thumbs_max_size = $sql_row['thumbs_max_size'];
 		$thumb_folder = str_replace('..', '', $sql_row['thumb_folder']);
 		$thumb_prefix = str_replace('..', '', $sql_row['thumb_prefix']);
-
-		if(!$admin_header && !$printed_admin_header) { $admin->print_header(); $printed_admin_header = true;}
 
 		?>
 	<?/* ----- EDIT CSS files ... 'edit_module_files' in /modules/ works, but redirects to other pageid but not back to tools
@@ -181,7 +177,6 @@ if($showSettingsPermission&&!$skip){
 
 <?php } }
 
-if(!$admin_header && !$printed_admin_header) { $admin->print_header(); $printed_admin_header = true;}
 if(!$skip){
 	//Module Usage
 	echo '<h3>'.$IIUPLOAD_TEXTS['TEST_BTN_HEADLINE'].'</h3>';
@@ -191,6 +186,4 @@ if(!$skip){
 		$i2->showButton();
 	}
 }
-
-//	$admin->print_footer(); already done in /admin/admintools/tool.php
 

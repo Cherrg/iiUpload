@@ -78,9 +78,9 @@ if($database->is_error()) {
 	}
 }
 
-// ------------------------ INSTALL DUMMY SETTINGS MODULE ------------------------
+// ------------------------ INSTALL DUMMY MODULE ------------------------
 // -------- admin can grant sepparate permissions for upload and settings --------
-//ii_upload_admin
+//(ii_upload_admin)
 /* ----- create dummy module directory ------ */
 $ad_mod_path = WB_PATH . '/modules/ii_upload_admin';
 $copy_files = false;
@@ -104,14 +104,14 @@ if ($copy_files){
 	}
 }
 if ($copy_files){
-	if(! copy ( WB_PATH.'/modules/'.$module_directory.'/install/tool_php_inst' ,
+	if(! copy ( WB_PATH.'/modules/'.$module_directory.'/install/tool_php_admin' ,
 				 $ad_mod_path.'/tool.php' ) ) {
 		$admin->print_error('Fehler beim Kopieren der Dateien', 'javascript:history_back();');
 		$copy_files = false;
 	}
 }
 if ($copy_files){
-	if(! copy ( WB_PATH.'/modules/'.$module_directory.'/install/info_php_inst' ,
+	if(! copy ( WB_PATH.'/modules/'.$module_directory.'/install/info_php_admin' ,
 				 $ad_mod_path.'/info.php' ) ) {
 		$admin->print_error('Fehler beim Kopieren der Dateien', 'javascript:history_back();');
 		$copy_files = false;

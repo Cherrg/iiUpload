@@ -46,7 +46,8 @@
 if(!defined('WB_PATH')) die(header('Location: index.php'));
 /* ------------------------------------------------------- */
 
-if(!$admin_header && !$printed_admin_header) { $admin->print_header(); $printed_admin_header = true;}
+//print admin header if not done already
+if(isset($admin_header) && !$admin_header) { $admin->print_header(); $admin_header = true;}
 
 ?>
 <h3>No settings are available here. Please use the <a href="/admin/admintools/tool.php?tool=ii_upload">iiUpload tool</a> to change settings.</h3>

@@ -59,27 +59,27 @@ if($database->is_error()) {
 	$mod_inst_error = true;
 }
 
-// ------------------------ UNINSTALL DUMMY SETTINGS MODULE ------------------------
+// ------------------------ UNINSTALL DUMMY MODULE ------------------------
 // -------- admin can grant sepparate permissions for upload and settings --------
-//ii_upload_admin
+//(ii_upload_admin)
+function uninst_ii_upload_delTree($dir) {
+	$files = array_diff(scandir($dir), array('.','..'));
+	foreach ($files as $file) {
+		if (is_dir("$dir/$file")){
+			uninst_ii_upload_delTree("$dir/$file");
+		} else {
+			$res = unlink("$dir/$file");
+			if (!$res) echo '<strong>ERROR on unlinking file</strong>: ' . "$dir/$file<br>";
+		}
+	}
+	$res = rmdir($dir);
+	if (!$res) echo '<strong>ERROR on removing directory</strong>: ' . "$dir<br>";
+	return $res;
+}
 
 $ad_mod_path = WB_PATH . '/modules/ii_upload_admin';
 /* ----- remove directory ----- */
 if (is_dir($ad_mod_path)) {
-	function uninst_ii_upload_delTree($dir) { 
-		$files = array_diff(scandir($dir), array('.','..'));
-		foreach ($files as $file) {
-			if (is_dir("$dir/$file")){
-				uninst_ii_upload_delTree("$dir/$file");
-			} else {
-				$res = unlink("$dir/$file");
-				if (!$res) echo '<strong>ERROR on unlinking file</strong>: ' . "$dir/$file<br>";
-			}
-		}
-		$res = rmdir($dir); 
-		if (!$res) echo '<strong>ERROR on removing directory</strong>: ' . "$dir<br>";
-		return $res;
-	}
 	uninst_ii_upload_delTree($ad_mod_path);
 }
 /* ----- remove database entry ----- */
