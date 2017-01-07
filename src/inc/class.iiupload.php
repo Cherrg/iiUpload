@@ -720,7 +720,7 @@ class iiUpload {
 	    		!isset($croprotate['rotate']) || count($croprotate) != 5){
 	    		$this->generateFTAN();
 		    	return array(	'success' => false,
-		    		'eMsg' => $this->TEXTS['ERROR_ILLEGAL_CROPPARAMS'].'1',
+				'eMsg' => $this->TEXTS['ERROR_ILLEGAL_CROPPARAMS'],
 		    		'new_name' => $this->admin['name'],
 		    		'new_key' => $this->admin['key']);
 	    	} else {

@@ -390,6 +390,7 @@ if(!jQuery().iiUploader) {
 							$img_crop_src.cropper({
 								viewMode: 2,
 								scalable: false,
+								checkOrientation: false,
 								built: function () {
 									if (fileList[file.name].crop!=false) $img_crop_src.cropper('setData', fileList[file.name].crop);
 								} });
@@ -402,38 +403,38 @@ if(!jQuery().iiUploader) {
 								$img_crop_src.cropper('setData', $img_crop_src.cropper('getData', false));
 								fileList[file.name].crop = $img_crop_src.cropper('getData', true);
 								$('#'+fileList[file.name].id).find('.indicators .cropped').css( "display", "inline-block");
-								//calculate tblr (top bottom left right)
+								//calculate tblrr (top bottom left right rotate)
 								var tmp_image_data = $img_crop_src.cropper('getImageData');
-								var tmp_tblr = {};
-								tmp_tblr['rotate'] = fileList[file.name].crop.rotate;
-								if (tmp_tblr['rotate']<0) tmp_tblr['rotate'] = tmp_tblr['rotate'] + 360;
-								if (tmp_tblr.rotate == 0){
-									tmp_tblr['t'] = fileList[file.name].crop.y;
-									tmp_tblr['b'] = tmp_image_data.naturalHeight - (fileList[file.name].crop.y + fileList[file.name].crop.height);
-									tmp_tblr['l'] = fileList[file.name].crop.x;
-									tmp_tblr['r'] = tmp_image_data.naturalWidth - (fileList[file.name].crop.x + fileList[file.name].crop.width);
-								} else if (tmp_tblr.rotate == 90){
-									tmp_tblr['l'] = fileList[file.name].crop.y;
-									tmp_tblr['r'] = tmp_image_data.naturalHeight - (fileList[file.name].crop.y + fileList[file.name].crop.height);
-									tmp_tblr['b'] = fileList[file.name].crop.x;
-									tmp_tblr['t'] = tmp_image_data.naturalWidth - (fileList[file.name].crop.x + fileList[file.name].crop.width);
-								} else if (tmp_tblr.rotate == 180){
-									tmp_tblr['b'] = fileList[file.name].crop.y;
-									tmp_tblr['t'] = tmp_image_data.naturalHeight - (fileList[file.name].crop.y + fileList[file.name].crop.height);
-									tmp_tblr['r'] = fileList[file.name].crop.x;
-									tmp_tblr['l'] = tmp_image_data.naturalWidth - (fileList[file.name].crop.x + fileList[file.name].crop.width);
-								} else if (tmp_tblr.rotate == 270){
-									tmp_tblr['r'] = fileList[file.name].crop.y;
-									tmp_tblr['l'] = tmp_image_data.naturalHeight - (fileList[file.name].crop.y + fileList[file.name].crop.height);
-									tmp_tblr['t'] = fileList[file.name].crop.x;
-									tmp_tblr['b'] = tmp_image_data.naturalWidth - (fileList[file.name].crop.x + fileList[file.name].crop.width);
+								var tmp_tblrr = {};
+								tmp_tblrr['rotate'] = fileList[file.name].crop.rotate;
+								if (tmp_tblrr['rotate']<0) tmp_tblrr['rotate'] = tmp_tblrr['rotate'] + 360;
+								if (tmp_tblrr.rotate == 0){
+									tmp_tblrr['t'] = fileList[file.name].crop.y;
+									tmp_tblrr['b'] = tmp_image_data.naturalHeight - (fileList[file.name].crop.y + fileList[file.name].crop.height);
+									tmp_tblrr['l'] = fileList[file.name].crop.x;
+									tmp_tblrr['r'] = tmp_image_data.naturalWidth - (fileList[file.name].crop.x + fileList[file.name].crop.width);
+								} else if (tmp_tblrr.rotate == 90){
+									tmp_tblrr['l'] = fileList[file.name].crop.y;
+									tmp_tblrr['r'] = tmp_image_data.naturalWidth - (fileList[file.name].crop.y + fileList[file.name].crop.height);
+									tmp_tblrr['b'] = fileList[file.name].crop.x;
+									tmp_tblrr['t'] = tmp_image_data.naturalHeight - (fileList[file.name].crop.x + fileList[file.name].crop.width);
+								} else if (tmp_tblrr.rotate == 180){
+									tmp_tblrr['b'] = fileList[file.name].crop.y;
+									tmp_tblrr['t'] = tmp_image_data.naturalHeight - (fileList[file.name].crop.y + fileList[file.name].crop.height);
+									tmp_tblrr['r'] = fileList[file.name].crop.x;
+									tmp_tblrr['l'] = tmp_image_data.naturalWidth - (fileList[file.name].crop.x + fileList[file.name].crop.width);
+								} else if (tmp_tblrr.rotate == 270){
+									tmp_tblrr['r'] = fileList[file.name].crop.y;
+									tmp_tblrr['l'] = tmp_image_data.naturalWidth - (fileList[file.name].crop.y + fileList[file.name].crop.height);
+									tmp_tblrr['t'] = fileList[file.name].crop.x;
+									tmp_tblrr['b'] = tmp_image_data.naturalHeight - (fileList[file.name].crop.x + fileList[file.name].crop.width);
 								}
-								if (tmp_tblr['t'] == 0 && tmp_tblr['b'] == 0 && tmp_tblr['l'] == 0 && tmp_tblr['r'] == 0 && tmp_tblr['rotate'] == 0){
-									tmp_tblr = false;
+								if (tmp_tblrr['t'] == 0 && tmp_tblrr['b'] == 0 && tmp_tblrr['l'] == 0 && tmp_tblrr['r'] == 0 && tmp_tblrr['rotate'] == 0){
+									tmp_tblrr = false;
 									fileList[file.name].crop = false;
 									$('#'+fileList[file.name].id).find('.indicators .cropped').css( "display", "none");
 								}
-								fileList[file.name].crop_tblr = tmp_tblr;
+								fileList[file.name].crop_tblr = tmp_tblrr;
 
 								closeCropper();
 							});

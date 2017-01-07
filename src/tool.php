@@ -179,7 +179,7 @@ if($showSettingsPermission&&!$skip){
 
 if(!$skip){
 	//Module Usage
-	echo '<h3>'.$IIUPLOAD_TEXTS['TEST_BTN_HEADLINE'].'</h3>';
+	echo '<h2>'.$IIUPLOAD_TEXTS['TEST_BTN_HEADLINE'].'</h2>';
 
     if (class_exists('iiUpload')) {
 	    $i2 = new iiUpload();
