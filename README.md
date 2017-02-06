@@ -15,6 +15,7 @@ Aktiviertes Javascript wird vorrausgesetzt.
 Getestet in WB 2.8.3 SP7 (PHP5.6/PHP7)
 Getestet in WBCE 1.1.10 (PHP7)
 Getestet in WBCE 1.2alpha (PHP7)
+Getestete Browser: Chrome 53, Firefox 50, Internet Explorer 11, Android 4.4 Browser
 Eine Beispielverwendung befindet sich in den Admintools.
 ```
 [Link zum WBCE Forum](https://forum.wbce.org/viewtopic.php?pid=7934)

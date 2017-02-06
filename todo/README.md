@@ -5,7 +5,8 @@
 **Weites vorgehen** 
 
 Das Ziel ist ein globales Uploadmodul for WB/WBCE zu gestalten.
-Dazu wird das Modul umgebaut und unter folgender Adresse weiterentwickelt:
+Dazu wird das Modul umgebaut und unter folgender Adresse weiterentwickelt, welches den Bildupload mit beinhaltet.
+
 
 https://github.com/Cherrg/gUpload
 
@@ -15,4 +16,5 @@ Wie die Berechtigungen verteilt werden, müsste man gegebenenfalls nochmal disku
 Auch, ob es ein erweitertes Inline Upload gibt, um ggf. den Upload in Media zu modernisieren.
 
 [Link zum WBCE Forum](https://forum.wbce.org/viewtopic.php?pid=7934)
+
 [Link2 zum WBCE Forum](https://forum.wbce.org/viewtopic.php?id=849)
