@@ -98,17 +98,30 @@ if(!jQuery().iiUploader) {
 				} 
 		};
 
+		var updateGetKeys = function (id, settings){
+			var $tan_input = $('#hidden_id_'+id);
+			settings.tanname = $tan_input.attr('name');
+			settings.tankey = $tan_input.attr('value');
+			return settings;
+		}
+
 		//public available methods
 		var methods = {
 			init : function(options) {
 				var settings = $.extend({}, $.fn.iiUploader.defaults, options );
+				//add hidden inputfield
+				var ownHiddenKey = $('<input/>', {'name': settings.tanname, 'value': settings.tankey, id: 'hidden_id_'+$(this).attr('id'), 'type': 'hidden'});
+				ownHiddenKey.insertAfter(this);
 				$(this).click(function(){
+
+
 					currentOpeningCaller = $(this);
 					//load language
 					i18n = ii_upload_i18n[settings.language];
 					//create new modal if needed
 					if ($modal == null){
 						backgroundClose=closeOverlay; //set close function
+						settings = updateGetKeys($(this).attr('id'), settings);
 						createModal(settings);
 						setupForm(settings);
 						$('body').append($modal);
@@ -390,13 +403,15 @@ if(!jQuery().iiUploader) {
 							$img_crop_src.cropper({
 								viewMode: 2,
 								scalable: false,
-								checkOrientation: false,
+								autoCrop: true,
+								autoCropArea: 1,
+								checkOrientation: true,
 								built: function () {
 									if (fileList[file.name].crop!=false) $img_crop_src.cropper('setData', fileList[file.name].crop);
 								} });
 							//link buttons to cropper
-							$cropwrapper.find('div.rotate_ccw').click(function(){ $img_crop_src.cropper('rotate', -90); });
-							$cropwrapper.find('div.rotate_cw').click(function(){ $img_crop_src.cropper('rotate', 90); });
+							$cropwrapper.find('div.rotate_ccw').click(function(){ $img_crop_src.cropper('rotate', -90); $img_crop_src.cropper('zoomTo', 0); $img_crop_src.cropper('moveTo', 0); });
+							$cropwrapper.find('div.rotate_cw').click(function(){ $img_crop_src.cropper('rotate', 90); $img_crop_src.cropper('zoomTo', 0); $img_crop_src.cropper('moveTo', 0); });
 							$cropwrapper.find('div.reset_crop').click(function(){ $img_crop_src.cropper('reset'); });
 							$cropwrapper.find('div.abort_crop').click(function(){ closeCropper(); });
 							$cropwrapper.find('div.assign_crop').click(function(){ 
@@ -635,7 +650,7 @@ if(!jQuery().iiUploader) {
 						//update tans on page and in settings
 						var $tan_input = $('input[name="'+settings.tanname+'"]'); 
 						$tan_input.attr('name', data.new_name);
-						$tan_input.attr('key', data.new_key);
+						$tan_input.attr('value', data.new_key);
 						settings.tanname = data.new_name;
 						settings.tankey = data.new_key;
 						//call image upload
@@ -728,7 +743,7 @@ if(!jQuery().iiUploader) {
 						//update tans on page and in settings
 						var $tan_input = $('input[name="'+settings.tanname+'"]'); 
 						$tan_input.attr('name', adata.new_name);
-						$tan_input.attr('key', adata.new_key);
+						$tan_input.attr('value', adata.new_key);
 						settings.tanname = adata.new_name;
 						settings.tankey = adata.new_key;
 

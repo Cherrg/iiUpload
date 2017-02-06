@@ -47,6 +47,27 @@
 if(!defined('WB_PATH')) die(header('Location: index.php'));  
 /* -------------------------------------------------------- */
 
+//store old values
+$mod_dir_org = null;
+$module_directory_org = null;
+$module_name_org = null;
+$module_function_org = null;
+$module_version_org = null;
+$module_platform_org = null;
+$module_author_org = null;
+$module_license_org = null;
+$module_description_org = null;
+
+if(isset($mod_dir)) $mod_dir_org = $mod_dir;
+if(isset($module_directory)) $module_directory_org = $module_directory;
+if(isset($module_name)) $module_name_org = $module_name;
+if(isset($module_function)) $module_function_org = $module_function;
+if(isset($module_version)) $module_version_org = $module_version;
+if(isset($module_platform)) $module_platform_org = $module_platform;
+if(isset($module_author)) $module_author_org = $module_author;
+if(isset($module_license)) $module_license_org = $module_license;
+if(isset($module_description)) $module_description_org = $module_description;
+
 // obtain module directory
 $mod_dir = basename(dirname(__FILE__));
 require(WB_PATH.'/modules/'.$mod_dir.'/info.php');
@@ -66,3 +87,14 @@ if (!class_exists('upload')) {
 include_once(WB_PATH .'/modules/'.$module_directory.'/inc/default_values.php');
 require_once(WB_PATH .'/modules/'.$module_directory.'/inc/class.iiuploadIncControl.php');
 include_once(WB_PATH .'/modules/'.$module_directory.'/inc/class.iiupload.php');
+
+//restore values
+if($mod_dir_org) $mod_dir = $mod_dir_org;
+if($module_directory_org) $module_directory = $module_directory_org;
+if($module_name_org) $module_name = $module_name_org;
+if($module_function_org) $module_function = $module_function_org;
+if($module_version_org) $module_version = $module_version_org;
+if($module_platform_org) $module_platform = $module_platform_org;
+if($module_author_org) $module_author = $module_author_org;
+if($module_license_org) $module_license = $module_license_org;
+if($module_description_org) $module_description = $module_description_org;

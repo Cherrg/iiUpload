@@ -520,7 +520,7 @@ class iiUpload {
 			"tanname: '".$this->admin['name']."',".
 			"uploadfolder: '".$this->uploadFolder."',".
 			"hideFolder: '".$this->hideUploadFolder."'".
-			(($this->jsCallback!=null)?", imgCallback:".$this->jsCallback :'').
+			(($this->jsCallback!=null)?", jsCallback:".$this->jsCallback :'').
 					"});});";
     	return $result;
     }
