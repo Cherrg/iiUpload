@@ -340,7 +340,8 @@ if(!jQuery().iiUploader) {
 						}
 						setTimeout(function(){ window.URL.revokeObjectURL(this.src); }, 3000);
 					};
-					img.src 	= window.URL.createObjectURL(file);
+				var myURL = window.URL || window.webkitURL;
+					img.src 	= myURL.createObjectURL(file);
 					$prev_elem.append(img);
 
 				//name and size
@@ -695,10 +696,10 @@ if(!jQuery().iiUploader) {
 			var ajaxData = new FormData($form.get(0));
 
 			ajaxData.delete('files[]');
-			
-			if(settings.hideFolder){
+			if(settings.hideFolder!=0){
 				ajaxData.append( 'img_path', settings.uploadfolder );
 			}
+			console.log(ajaxData);
 			ajaxData.append( 'mfunction', 'upload' );
 			ajaxData.append( 'file', fileList[cFileName].file );
 			ajaxData.append( 'crop', JSON.stringify(fileList[cFileName].crop_tblr) );
